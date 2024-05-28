@@ -1,0 +1,59 @@
+// A variable to hold NFT's
+const NFTs=[];
+
+/* this function will take in some values as parameters, create an
+   NFT object using the parameters passed to it for its metadata, 
+   and store it in the variable above.*/
+function mintNFT (name,album,year) 
+{
+   const NFTobj=
+   {
+      "artist_name":name,
+      "album_name":album,
+      "release_year":year
+   }
+   NFTs.push(NFTobj);            // or NFTs.unshift(NFTobj);
+   console.log("Minted:",name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () 
+{
+   /*
+   for(let n=0; n<NFTs.length; n++)
+   {
+      console.log("\nID:",n+1);
+      let name=NFTs[n].artist_name;
+      let album=NFTs[n].album_name;
+      let year=NFTs[n].release_year;
+      console.log("Name:",name,",","Album:",album,",","Year:",year);
+   }
+    */
+   let n=0;
+   while (n<NFTs.length)
+   {
+      console.log("\nID:",n+1);
+      let name=NFTs[n].artist_name;
+      let album=NFTs[n].album_name;
+      let year=NFTs[n].release_year;
+      console.log("Name:",name,",","Album:",album,",","Year:",year);
+      n+=1;
+   }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() 
+{
+   console.log("\nTotal Supply",NFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Karan Aujla","Making Memories",2023);
+mintNFT("Diljit Dosanjh","MoonChild Era",2021);
+mintNFT("Jassa Dhillon","VIBIN",2023);
+mintNFT("Tarsem Jassar","NewOrder",2024);
+
+listNFTs();
+
+getTotalSupply();
